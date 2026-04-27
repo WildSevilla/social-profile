@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --bg: #0d0d0d;
+  --surface: #141414;
+  --border: #2a2a2a;
+  --text: #d4c9b0;
+  --muted: #6b6050;
+  --accent: #c4674a;
+  --accent2: #4a8bc4;
+  --green: #4ac47a;
+  --tag-bg: #1e1e1e;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1rem 4rem;
+}
+
+/* ── Terminal header ── */
+
+.header {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.terminal-bar {
+  background: #2a2a2a;
+  padding: 0.4rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot.red    { background: #c4674a; }
+.dot.yellow { background: #c4a44a; }
+.dot.green  { background: #4ac47a; }
+
+.terminal-title {
+  flex: 1;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-family: 'Courier Prime', monospace;
+}
+
+.prompt {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+}
+
+.ps1  { color: var(--green); }
+.cmd  { color: var(--text); }
+
+.cursor {
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ── Cards ── */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  border-radius: 2px;
+}
+
+/* ── Identity ── */
+
+.identity {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border: 2px solid var(--border);
+  border-radius: 2px;
+  flex-shrink: 0;
+  image-rendering: pixelated;
+  object-fit: cover;
+}
+
+.identity-info { flex: 1; }
+
+.name {
+  font-family: 'VT323', monospace;
+  font-size: 2.2rem;
+  color: var(--text);
+  letter-spacing: 1px;
+  line-height: 1;
+  margin-bottom: 0.1rem;
+}
+
+.handle {
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.bio {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  color: var(--accent2);
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  letter-spacing: 0.5px;
+  text-transform: lowercase;
+}
+
+/* ── Section titles ── */
+
+.section-title {
+  font-family: 'VT323', monospace;
+  font-size: 1.4rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.section-text {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+/* ── Lists ── */
+
+.list {
+  list-style: none;
+  font-size: 0.88rem;
+}
+.list li {
+  padding: 0.2rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+.list li:last-child { border-bottom: none; }
+.list li::before {
+  content: '→ ';
+  color: var(--accent);
+}
+
+/* ── Links ── */
+
+.link-list {
+  list-style: none;
+}
+.link-list li {
+  display: flex;
+  gap: 1rem;
+  padding: 0.3rem 0;
+  font-size: 0.88rem;
+  border-bottom: 1px dashed var(--border);
+}
+.link-list li:last-child { border-bottom: none; }
+
+.link-label {
+  color: var(--accent);
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
+a {
+  color: var(--accent2);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--text);
+}
+
+/* ── Posts ── */
+
+.post-item {
+  border-bottom: 1px dashed var(--border);
+  padding: 0.6rem 0;
+  font-size: 0.88rem;
+}
+.post-item:last-child { border-bottom: none; }
+
+.post-title {
+  color: var(--text);
+  font-weight: 700;
+}
+.post-date {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.post-preview {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.empty {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+/* ── Footer ── */
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border);
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+}
+.footer-sep { margin: 0 0.5rem; }
+
+/* ── Responsive ── */
+@media (max-width: 500px) {
+  .identity { flex-direction: column; }
+  .avatar { width: 72px; height: 72px; }
+  .name { font-size: 1.8rem; }
+}

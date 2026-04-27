@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name — social.git</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="terminal-bar">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="terminal-title">~/profile — bash</span>
+    </div>
+    <div class="prompt">
+      <span class="ps1">visitor@social.git:~$</span>
+      <span class="cmd"> cat profile.md</span>
+      <span class="cursor">█</span>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="card identity">
+      <img class="avatar" src="avatar.jpg" alt="avatar"
+           onerror="this.src='https://github.com/identicons/default.png'">
+      <div class="identity-info">
+        <h1 class="name">Your Name</h1>
+        <p class="handle">@yourgithub</p>
+        <p class="bio">
+          A short bio about yourself. What you do, what you love,
+          what you're building. Keep it human.
+        </p>
+        <div class="tags">
+          <span class="tag">design</span>
+          <span class="tag">code</span>
+          <span class="tag">music</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">// NOW</h2>
+      <p class="section-text">
+        What are you working on right now? What's occupying your brain?
+        This is your /now page — update it whenever.
+      </p>
+      <ul class="list">
+        <li>Building something with Git as a data layer</li>
+        <li>Reading <em>Snow Crash</em></li>
+        <li>Learning to make sourdough bread</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">// LINKS</h2>
+      <ul class="link-list">
+        <li>
+          <span class="link-label">github</span>
+          <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+        </li>
+        <li>
+          <span class="link-label">web</span>
+          <a href="https://yoursite.com" target="_blank">yoursite.com</a>
+        </li>
+        <li>
+          <span class="link-label">email</span>
+          <a href="mailto:you@example.com">you@example.com</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">// POSTS</h2>
+      <div id="posts-list">
+        <!-- Posts are loaded from the posts/ folder -->
+        <p class="empty">No posts yet. Add .md or .html files to posts/</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>profile hosted on <a href="https://github.com/yourusername/social-profile" target="_blank">github</a></span>
+    <span class="footer-sep">·</span>
+    <span>part of <strong>social.git</strong></span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
